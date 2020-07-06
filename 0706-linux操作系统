@@ -1,0 +1,25 @@
+1.常见操作系统平台
+	a.unix   
+		mac os  IOS  aix
+ 	b.linux   
+ 		redhat  centos
+ 		suse    opensuse
+ 		ubuntu  kail 
+ 		backtrack  COS
+ 		红旗       麒麟 
+ 		redstar    
+	c.windows
+		server
+			03 08 12 16
+		desktop
+			win7 winxp win10 win8 vista me
+2.云、大数据、虚拟化
+	a.云
+		云存储
+		云计算
+	b.大数据
+	c.虚拟化
+		虚拟机：
+			vmware  速度慢，稳定
+			vbox    速度快，不稳定
+			kvm     linux内核
