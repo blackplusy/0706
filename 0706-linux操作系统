@@ -98,3 +98,43 @@
 			cd ~
 				目录切换到家目录
 
+6.帮助
+	man  官方手册
+		man ls  查看ls命令的官方手册
+	info 说明文档
+		info ls 查看ls的说明文档
+	--help 常用参数
+		ls --help 查看ls命令的常用参数
+7.linux的网络设置
+	a.linux的网络设置
+		1>在win下面搜索一个和电脑本机IP同一个网段的IP地址
+				win+r--cmd--ipconfig  查看win下的网卡信息
+				win+r--cmd--ping 192.168.1.x(x:1-254) 
+				如果有返回时间说明该IP已经有人使用
+				如果显示网络超时或者无法连接说明该IP地址可以使用
+				192.168.1.144 用于linux的网络设置
+		2>linux中打开终端
+			setup--网络设置--edit devices--eth0--名称、设备不要动、取消hdcp【空格】--设置IP地址、子网掩码
+			192.168.1.144
+			255.255.255.0
+			--ok--save--save&quit--退出--service network restart
+			获取IP地址的2种方式
+				static 静态设置(手动)
+				dhcp   自动获取
+		3>查看linux的IP地址
+			ifconfig     
+				查看系统中已经激活的网卡
+			ifconfig eth0
+				查看系统中第一块网卡的信息(eth0)
+	b.虚拟机的网络设置
+		右键标签--设置--网络适配器--桥接、复制物理网络链接状态--确定。
+		1>桥接
+			客户机可以和局域网中其他主机进行通信
+		2>网络地址转换
+			通过IP地址转换共享宿主机的上网功能，无法和局域网其他主机进行通信
+		3>仅主机
+			客户机和宿主机的私有通信通道，无法和局域网其他主机进行通信
+	c.测试
+		win:win+r--cmd--ping linux的IP
+		linux:打开终端--ping win的IP
+		
