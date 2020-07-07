@@ -1,0 +1,132 @@
+复习
+===========================================
+hostname
+who
+whoami
+pwd
+ls
+cd
+man
+info
+setup
+service
+ping
+ifconfig
+mkdir
+rmdir
+cp
+mv
+touch
+cp
+mv
+cat
+less
+more
+head
+tail 
+vi
+========================================
+1.vi/vim 文本编辑器
+a.打开文件
+	vi/vim 文件名
+b.vi/vim的3种模式
+	命令模式
+	编辑模式
+	末行模式
+c.命令模式
+	跳转
+		gg 	
+			光标跳转到文件首行行首
+		100gg
+			光标跳转到100行行首
+		G
+			光标跳转到文件末行行首
+		^
+			光标跳转到本行内容行首
+		$
+			光标跳转到本行内容行尾
+	复制
+		yy
+			复制当前行内容
+		10yy
+			复制10行内容
+	粘贴
+		p
+	剪切/删除
+		dd
+			删除当前行内容
+		10dd
+			删除10行内容
+	搜索
+		?386  全文搜索386关键字
+		/386  全文搜索386关键字
+	命令模式进入到编辑模式的方法
+		i       光标所在位置进行插入，进入到编辑模式
+		O  o
+		S  s
+		A  a
+d.编辑模式
+	自己动手 丰衣足食
+	编辑模式无法直接进入到末行模式，需要返回命令模式(esc)
+e.末行模式
+	显示行号 
+		:set nu
+	取消显示行号
+		:set nonu
+	保存
+		:w
+	另存
+		:w 路径
+	退出
+		:q
+	强制保存退出
+		:wq!
+	替换
+		:1,$s/5/aaa/  
+			全文搜索5替换为aaa，只替换每行第一个
+		:1s/5/bbb/g
+			第一行搜索5替换为bbb，g表示全部替换
+2.网络配置
+	a.临时设置(重启网络后失效)
+		192.168.1.31
+		192.168.1.144---ping 192.168.1.31
+		ifconfig eth0 10.10.101.3
+			linux第一块网卡设置为10.10.101.3
+	b.修改配置文件(重启网络后生效)
+		vim /etc/sysconfig/network-scripts/ifcfg-eth0
+			DEVICE=eth0                  设备名称
+			BOOTPROTO=staitc             启动协议(dhcp、static)
+			HWADDR=00:0c:29:ba:a0:a1     网卡mac地址
+			ONBOOT=yes                   网卡是否随开机启动而启动
+			NETMASK=255.255.255.0        子网掩码
+			IPADDR=192.168.1.144         IP地址
+			TYPE=Ethernet                上网类型
+		修改完配置文件之后一定要重启网络
+	c.命令设置(重启网络后生效)
+3.设置主机名
+	主机名通常使用FQDN命名方式
+	a.查看主机名
+		hostname
+	b.临时设置主机名(重启系统后失效)
+		hostname heygor.gaga.com
+	c.永久设置主机名(重启系统后生效)
+		 /etc/sysconfig/network
+		 HOSTNAME=heygor.gaga.com
+4.绑定主机名
+	vim /etc/hosts
+	192.168.1.144  heygor.gaga.com
+5.关闭selinux
+	a.查看selinux状态
+		getenforce
+	b.临时设置selinux
+		setenforce 0
+	c.永久设置selinux
+		vim /etc/selinux/config
+		SELINUX=disabled
+6.关闭防火墙	
+	a.查看防火墙状态
+		service iptables status
+	b.关闭防火墙	
+		service iptables stop
+	c.开启防火墙
+		service iptables start
