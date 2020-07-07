@@ -141,5 +141,70 @@ e.末行模式
 	8.b
 	9.passwd 按提示输入2次密码
 	10.exit(重启)
-	
+
+8.包、压缩文件、压缩包
+a.包文件(tar)
+	包文件的名字通常是以.tar结尾。
+	打包
+		tar -cvf test.tar Desktop/ install.log*
+	查看包文件中文件属性信息
+		tar -tvf test.tar
+	解包到当前目录
+		tar -xvf test.tar
+	解包到指定目录(-C)
+		tar -xvf test.tar -C /opt/
+b.压缩文件(gzip)
+	查看install.log文件大小
+		du -sh install.log
+	压缩install.log文件
+		gzip install.log
+	查看压缩文件的压缩属性
+		gzip -l install.log.gz
+	解压压缩文件
+		gzip -d install.log.gz
+c.压缩包
+	先打包后压缩，压缩包通常以.tar.gz或者.tgz结尾
+	tar -cvf test1.tar install.log*
+	gzip test1.tar
+	-------------------------------
+	创建压缩包
+		tar -czvf test2.tgz install.log*
+	查看压缩包
+		tar -tzvf test2.tgz
+	解压压缩包到当前目录
+		tar -xzvf test2.tgz
+	解压压缩包到指定目录
+		tar -xzvf test2.tgz -C /opt
+d.安装vmware-tools
+	 tar -xzvf VMwareTools-10.3.10-12406962.tar.gz -C /opt/
+	 cd /opt/vmware-tools-distrib/
+	  ./vmware-install.pl
+	  一路回车，重启
+9.搜索和管道
+a.搜索
+	find    搜文件，速度满
+		find /etc/ -name *.conf
+			/etc目录下搜索名字以.conf结尾的文件
+		find /etc/ -name conf
+			/etc目录下搜索名字是conf的文件
+	locate  搜文件
+		locate passwd
+			系统中搜索passwd文件
+	updatedb 刷新系统数据库
+	grep    搜内容
+		grep root /etc/passwd
+			/etc/passwd文件中搜索含有root关键字的行
+		grep ^r /etc/passwd
+		 	/etc/passwd文件中搜索以r开头的行
+		grep bash$ /etc/passwd
+			/etc/passwd文件中以bash结尾的内容
+b.管道
+	前面的输出作为后面的输入
+	cat /etc/passwd | grep ^r |grep bash$
+		/etc/passwd文件中搜索以r开头并且以bash结尾的行
+	head -7 install.log |tail -1
+		查看install.log文件的第七行内容
+
+
+
 
