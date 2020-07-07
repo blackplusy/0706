@@ -205,6 +205,94 @@ b.管道
 	head -7 install.log |tail -1
 		查看install.log文件的第七行内容
 
+10.用户和权限
+a.用户
+	/etc/passwd
+		用户配置文件
+	/etc/shadow
+		密码配置文件
+	/etc/group
+		组配置文件
+	1>创建用户
+		useradd simon
+			创建simon用户
+		passwd simon
+			给simon用户设置密码
+	2>修改用户
+		usermod
+		锁定用户
+			usermod -L simon
+				锁定用户simon
+		解锁用户
+			usermod -U simon
+				解锁用户simon
+	3>删除用户
+		userdel -r 用户名
+		userdel -r simon
+			删除simon用户
+b.权限
+	1>查看权限的方法
+		ll install.log
+		-rw-r--r-- 1 root root 35236 07-07 05:55 install.log
+		文件属性信息
+		1:文件类型      d:目录  -:普通文件
+		2-10:文件权限   
+		11:文件节点
+		12:文件拥有者
+		13:文件拥有组
+		14:文件大小
+		15:最后修改时间
+		16:文件名
+	2>常见权限
+		r:读
+			目录:可以列表
+			文件:可以查看内容
+		w:写
+			目录:可以新建、删除、重命名文件
+			文件:可以修改文件内容
+		x:执行
+			目录:可以进入
+			文件:可执行，脚本文件或者二进制文件
+	3>权限的分组
+		rw- 			r-- 		r--
+		拥有者权限     拥有组权限    其他人权限
+	4>权限的判断
+		判断用户是否为文件拥有者，如果是，赋予拥有者权限
+		如果不是，判断用户是否为文件拥有组成员，如果是，赋予拥有组权限
+		如果都不是，赋予其他人权限
+		id heygor 
+			查看heygor用户的组信息
+	5>修改权限
+		chmod(直接修改权限)
+			1)字符方式
+			u 	拥有者
+			g   拥有组
+			o   其他人
+			a   所有人
+			chmod u+x install.log
+				拥有者增加执行权限
+			chmod g+x,o+x install.log
+				拥有组和其他人增加执行权限
+			chmod a-x install.log
+				取消所有用户执行权限
+			2)数字方式
+				r:4
+				w:2
+				x:1
+				-:0
+				4+2+0 4+0+0 4+0+0==644
+			chmod 777 install.log
+				所有与用户拥有读写执行权限
+			chmod 000 install.log
+				所有用户没有任何权限	
+		chown(通过修改文件属主来修改权限)
+			chown heygor install.log
+				修改文件拥有者为heygor
+			chown :bin install.log
+				修改文件拥有组为bin
+			chown root:root install.log
+				修改文件拥有者为root，拥有组为root
+
 
 
 
