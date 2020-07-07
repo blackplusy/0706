@@ -130,3 +130,16 @@ e.末行模式
 		service iptables stop
 	c.开启防火墙
 		service iptables start
+7.忘记密码解决方案
+	1.重启
+	2.e
+	3.e
+	4.下(选择第二个)
+	5.e
+	6.输入空格 1
+	7.回车
+	8.b
+	9.passwd 按提示输入2次密码
+	10.exit(重启)
+	
+
