@@ -77,4 +77,36 @@ grep
 			查看oracle端口是否正常
 	lsof -i:22
 		查看22号端口的链接信息
-		
+	mount
+		查看系统挂载信息
+2.linux下的软件安装
+	a.软件安装的方式
+		手动安装(rpm安装)
+		自动安装(yum安装)
+		二进制文件安装
+		源码安装
+	b.rhel软件安装基础
+		linux中所有软件都在安装光盘的Server目录下
+		所有的安装包都是以.rpm结尾的。如果需要最新版本，建议官网。
+		type是iso9660的对应硬件都是光驱
+		ftp://xxxx.com/xxxxxxx.mp4
+		1>安装操作系统
+		2>设置IP地址、主机名、绑定主机名
+		3>关闭防火墙、关闭selinux
+		4>加载光驱
+			右键标签--设置--cd\dvd--使用iso映像文件[已连接、启动时链接]
+		5>输入mount命令查看type是iso9660的对应目录
+		6>进入到对应目录的Server目录下
+			cd /media/RHEL_5.4\ i386\ DVD/Server/
+		7>查找vsftpd相关软件
+			ls |grep vsftpd
+		8>安装vsftpd相关软件
+			 rpm -ivh vsftpd-2.0.5-16.el5.i386.rpm
+		9>启动服务
+			service vsftpd start
+		10>测试
+			浏览器中输入ftp://linux的IP，如果pub目录出现，说明安装成功
+		11>共享文件
+			需要共享的文件复制到/var/ftp目录下
+		12>win下映射网络磁盘
+			
