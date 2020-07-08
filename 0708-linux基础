@@ -1,0 +1,80 @@
+hostname
+who
+whomai
+pwd
+ls
+cd
+man
+info
+ping
+setup
+service
+mkdir
+rmdir
+cp
+mv
+touch
+echo
+rm
+cat
+less
+more
+head
+tail
+vi
+tar
+du
+gzip
+useradd
+passwd
+usermod
+userdel
+chmod
+chown
+ifconfig
+find
+locate
+grep
+====================================================
+别名 alias
+	alias a='ifconfig'  
+		给ifconfig别名 a
+====================================================
+1.管理类命令
+	top   监控系统资源
+	概念:pid 进程id 每个应用程序在运行时候会产生一个pid
+	ps -ef 查看系统进程
+		ps -ef | grep mysql
+			查看mysql进程是否正常运行
+		ps -ef | grep httpd
+			查看apache进程是否正常运行
+		ps -ef | grep sshd
+			查看ssh进程是否正常(ssh:远程连接linux的服务)
+		ps -ef | grep tomcat
+			查看tomcat进程是否正常
+	kill -9  pid  暴力杀
+	     -15 pid  温柔杀
+	free -m
+		查看系统内存
+	df -h 
+		查看磁盘使用率
+	ping
+		测试网络是否联通
+		ping 192.168.1.144
+		ping www.baidu.com
+	vmstat
+		监控系统资源
+	netstat -an
+		查看系统开放的所有端口
+		mysql 3306
+		oracle 1521
+		apache/nginx 80
+		tomcat 8080
+		sshd   22
+		netstat -an | grep 22
+			查看ssh端口是否正常
+		netstat -an | grep 1521
+			查看oracle端口是否正常
+	lsof -i:22
+		查看22号端口的链接信息
+		
