@@ -106,7 +106,7 @@
 		tar -xzvf mongodb-linux-i686-2.4.9.tgz
 	7>设置环境变量(让系统可以找到mongodb的命令)
 		/etc/profile   	全局设置
-		~./bash_profile 用户设置(只有当前用户生效)
+		~/.bash_profile 用户设置(只有当前用户生效)
 		在PATH后面增加mongodb的命令的路径
 		PATH=$PATH:$HOME/bin:/root/mongodb/bin
 	8>使环境变量生效
