@@ -94,5 +94,36 @@
 
 4.二进制文件的安装
 	linux中mongodb的安装
+	1>安装操作系统
+	2>配置IP、主机名、绑定主机名
+	3>关闭防火墙、关闭selinux
+	4>下载mongodb软件包
+		操作系统类型
+		操作系统位数
+		软件版本
+	5>把mongodb压缩包传入linux中
+	6>解压压缩包
+		tar -xzvf mongodb-linux-i686-2.4.9.tgz
+	7>设置环境变量(让系统可以找到mongodb的命令)
+		/etc/profile   	全局设置
+		~./bash_profile 用户设置(只有当前用户生效)
+		在PATH后面增加mongodb的命令的路径
+		PATH=$PATH:$HOME/bin:/root/mongodb/bin
+	8>使环境变量生效
+		source ~/.bash_profile
+	9>启动mongodb
+		创建一个目录用于存放数据库的数据
+			mkdir /opt/data
+		启动命令
+			mongod --dbpath /opt/data --logpath /opt/data/mongo.log --fork
+			mongod mongodb的主服务
+			dbpath mongodb的数据存放路径(目录)
+			logpath mongodb的日志文件存放位置(文件)
+			fork    后台执行
+		检查mongodb是否正常
+			netstat -an |grep 27017
+			ps -ef |grep mongod
+
+
 
 
