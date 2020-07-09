@@ -1,0 +1,75 @@
+1.自动安装(yum)
+	所有光驱的挂载都需要加-o loop
+	a.yum的安装配置
+		1>创建一个空目录用于挂载
+			mkdir /yum
+		2>加载光驱
+			设置--cd\dvd--使用iso映像文件--已连接、启动时链接
+		3>挂载光驱到刚才创建的目录上
+			mount -o loop /dev/scd0 /yum
+		4>修改yum的配置文件
+			vim /etc/yum.repos.d/rhel-debuginfo.repo
+			[rhel-debuginfo]                 名字
+			name=test                        名字
+			baseurl=file:///yum/Server       自动安装到哪里去找软件包
+			enabled=1                        是否开启自动安装(1是开启0是关闭)
+			gpgcheck=0                       是否开启软件包检查(0不检查1是检查)
+		5>清理yum缓存
+			yum clean all
+		6>查看可以自动安装的软件列表
+			yum list
+	b.自动安装mysql服务
+		1>安装配置好yum
+		2>搜索mysql相关软件包
+			yum list |grep mysql
+		3>安装mysql相关服务
+			yum install mysql* -y
+		4>启动mysql服务
+			service mysqld start
+		5>检查
+			ps -ef |grep mysqld
+			查看mysql进程
+			netstat -an |grep 3306
+			查看mysql端口信息
+		6>补充
+			0.0.0.0   	任意IP地址
+			127.0.0.1 == localhost  ==电脑本机
+	c.ecshop项目部署
+		开发语言：     php
+		web服务器:    apache
+		数据库服务器:  mysql
+		1>安装操作系统
+		2>设置IP地址、主机名、绑定主机名
+		3>关闭防火墙、关闭selinux
+		4>安装配置好yum
+		5>安装php相关组件
+			yum install php* -y
+		6>安装apache相关组件
+			yum install http* -y
+		7>安装mysql相关组件
+			yum install mysql* -y
+		8>启动相关服务
+			service mysqld start
+			service httpd start
+		9>测试
+			ps -ef |grep mysqld
+			ps -ef |grep httpd
+			netstat -an |grep 3306
+			netstat -an |grep 80
+			浏览器中输入http://linux的IP
+		10>下载ecshop压缩包并且解压(win)
+		11>通过winscp把挤压后的文件夹传入linux的/var/www/html
+		12>给ecshop1目录赋予权限
+			chmod 777 -R /var/www/html/ecshop1/
+		13>浏览器中输入http://linux的ip/ecshop1按照提示安装
+			配置系统注意:
+			数据库主机   localhost
+			端口号       3306
+			用户名       root
+			密码         没有
+			数据库名     test
+
+
+
+
+
