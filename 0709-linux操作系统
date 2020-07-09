@@ -68,8 +68,31 @@
 			用户名       root
 			密码         没有
 			数据库名     test
+2.环境搭建基础
+	后端
+		操作系统
+			unix
+			linux
+			windows
+		web服务器
+			apache  不支持java
+			nginx   轻量级web服务器(负载均衡、反向代理)
+			tomcat   java
+			iis      微软
+		数据库服务器
+			oracle   甲骨文
+			mysql    甲骨文
+			sqlserver 微软
+3.常见搭配
+	操作系统        web服务器       数据库服务器
+	win               iis           sqlserver\access
+					 apache         mysql
+					 tomcat         mysql/oracle
+	linux            apache         mysql          (LAMP)
+					 nginx          mysql          (LNMP)
+					 tomcat         mysql/oracle
 
-
-
+4.二进制文件的安装
+	linux中mongodb的安装
 
 
