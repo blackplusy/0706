@@ -106,7 +106,7 @@
 		tar -xzvf mongodb-linux-i686-2.4.9.tgz
 	7>设置环境变量(让系统可以找到mongodb的命令)
 		/etc/profile   	全局设置
-		~/.bash_profile 用户设置(只有当前用户生效)
+		~./bash_profile 用户设置(只有当前用户生效)
 		在PATH后面增加mongodb的命令的路径
 		PATH=$PATH:$HOME/bin:/root/mongodb/bin
 	8>使环境变量生效
@@ -124,6 +124,47 @@
 			netstat -an |grep 27017
 			ps -ef |grep mongod
 
-
+5.linux下的jdk配置
+	a.下载
+		jdk java的开发环境
+		jre java的运行环境
+	b.把下载好的压缩包传入linux中
+	c.解压压缩包
+		tar -xzvf jdk-7u7-linux-i586.tar.gz
+	d.设置环境变量
+		source ~/.bash_profile
+		PATH上面新增JAVA_HOME环境变量
+		在PATH中添加jdk的bin和jre的bin的配置
+		JAVA_HOME=/root/jdk
+		PATH=$JAVA_HOME/bin:$JAVA_HOME/jre/bin:$PATH:$HOME/bin:/root/mongodb/bin
+	e.测试java版本
+		java -version
+	f.使环境变量生效
+		source ~/.bash_profile
+	g.测试
+		java
+		javac
+		java -verison
+6.tomcat的安装和配置
+	a.下载
+	b.把下载好的tomcat压缩包传入linux中
+	c.解压tomcat压缩包
+		tar -zxvf apache-tomcat-7.0.96.tar.gz
+	d.tomcat的目录简介
+		bin 	存放tomcat命令的位置
+		logs 	存放tomcat的日志位置
+		webapps 项目位置
+		lib   	库文件所在位置
+		conf    tomcat的配置文件所在位置
+		temp 	存放tomcat的临时文件的位置
+	e.启动tomcat服务
+		1>进入到tomcat的bin目录
+			cd /root/apache-tomcat-7.0.96/bin
+		2>执行startup.sh
+			./startup.sh
+	f.检查tomcat是否正常运行
+		ps -ef |grep tomcat
+		netstat -an |grep 8080
+		浏览器中输入linux的IP:8080
 
 
