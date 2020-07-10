@@ -132,7 +132,7 @@
 	c.解压压缩包
 		tar -xzvf jdk-7u7-linux-i586.tar.gz
 	d.设置环境变量
-		source ~/.bash_profile
+		vim ~/.bash_profile
 		PATH上面新增JAVA_HOME环境变量
 		在PATH中添加jdk的bin和jre的bin的配置
 		JAVA_HOME=/root/jdk
