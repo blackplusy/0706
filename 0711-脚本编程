@@ -1,0 +1,92 @@
+1.思维导图
+	xmind
+	freemind
+	mindmanager
+	processon
+	百度脑图
+2.命令总结
+	hsotname
+	who
+	whoami
+	pwd
+	ls
+	cd
+	man
+	info
+	ifconfig
+	setup
+	ping
+	service
+	mkdir
+	rmdir
+	cp
+	mv
+	touch
+	echo
+	cat
+	less
+	more
+	head
+	tail
+	vi
+	tar
+	gzip
+	du
+	useradd
+	usermod
+	userdel
+	passwd
+	chmod
+	chown
+	top
+	ps
+	kill
+	netstat 
+	lsof
+	df
+	free
+	init  		系统默认运行级别
+		/etc/inittab
+		init 0   关机
+		init 3   进入到命令模式
+		init 5   进入到图形模式
+		init 6   重启
+	chkconfig   开机启动列表
+		chkconfig --list
+			查看开机启动列表
+		chkconfig --level 35 httpd on
+			运行级别3和运行级别5apache随开机启动而启动
+	mount
+	umount      取消挂载
+	rpm 
+	yum
+	su    切换用户
+		su root
+			切换到root用户里(不完全切换)
+		su - root
+			切换到root用户里(完全切换)
+	tailf
+		监控文件内容
+		tailf /var/log/httpd/access_log
+		监控apache的日志
+========================================
+1.循环
+	ping 服务器集群
+	批量创建用户user1-user100
+	计算0-100的总和，0-100的偶数的和
+	seq 序列
+	wc -l 统计行数
+	a.for循环
+	b.while循环
+	c.跳出循环
+		continue 跳出本次循环
+		break    跳出整个循环
+	
+
+
+
+
+
+
+
+
