@@ -145,7 +145,7 @@
 3.awk文件操作
 	awk -F ":" 'BEGIN{处理文件前的代码块}{处理文件过程中代码块}END{处理文件后的代码块}' 文件
 	a.输出顶部增加come on，输出最后增加get out
-		awk -F ":" 'BEGING{ print come on}{ print }END{print get out}' passwd
+		awk -F ":" 'BEGIN{ print "come on"}{ print }END{print "get out"}' passwd
 	b.打印最后一行的最后一列
 		awk -F ":" 'END{ print $NF}' passwd
 	c.打印文件总字段数
@@ -212,7 +212,17 @@
 		运行 awk -f 03.awk test.txt
 
 
-
+练习1：
+终端登陆后显示
+	当前用户名:xxx
+	当前IP:xxx
+	当前主机名:xxx
+练习2:
+系统情况报告
+	cpu使用率超过80%
+	内存使用率超过80%
+	硬盘使用率超过80%
+	超过使用率报警(echo xxx使用率已经超过80%)
 
 
 
