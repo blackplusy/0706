@@ -142,9 +142,74 @@
 	n.隔行删除(隔行打印)
 		 awk 'NR%2==0{ print }' passwd
 
+3.awk文件操作
+	awk -F ":" 'BEGIN{处理文件前的代码块}{处理文件过程中代码块}END{处理文件后的代码块}' 文件
+	a.输出顶部增加come on，输出最后增加get out
+		awk -F ":" 'BEGING{ print come on}{ print }END{print get out}' passwd
+	b.打印最后一行的最后一列
+		awk -F ":" 'END{ print $NF}' passwd
+	c.打印文件总字段数
+		awk -F ":" 'BEGIN{ count=0 }{count+=NF}END{print count}' passwd
+	d.打印字段数大于4的总行数
+		awk -F ":" 'BEGIN{ count=0}NF>4{ count++ }END{print count}' passwd
+	e.awk代码写入到独立的文件中
+		cat 01.awk
+			BEGIN {
+			        FS=":"
+			        count=0
+			}
+			{
+			        if ( NF>4 )
+			        {
+			                count++
+			        }
+			}
+			END{
+			        print count
+			}
+		运行：awk -f 01.awk passwd
+	f.awk循环
+		for (i=0;i<10;i++)
+		{
+			printf("%d",i)
+		}
+		02.awk
+		{
+		for(i=0;i<5;i++)
+		{
+		        printf("%d",i)
+		}
+		}
+		END{
+		        printf("over")
+		}
+		运行：echo |awk -f 02.awk
+	g.倒序排列所有字段
+		test.txt
+		1:2:3:4
+		a:b:c:d:e:f
+		处理后
+		4:3:2:1
+		f:e:d:c:b:a
+		03.awk
+		BEGIN{
+        	FS=":"
+		}
+		{
+		        for(i=NF;i>0;i--)
+		        {
+		                if (i>1)
+		                {
+		                        printf("%s:",$i)
+		                }
+		                else
+		                {
+		                        printf("%s\n",$i)
+		                }
+		        }
+		}
 
-
-
+		运行 awk -f 03.awk test.txt
 
 
 
