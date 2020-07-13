@@ -258,6 +258,53 @@ tel:18028768679
 			select * from ecs_goods;
 			select * from ecs_goods\G
 				查看ecs_goods表中所有数据
+		b3.表
+			1>数据类型
+				字符类型 'abc' '123' char varchar
+				数值类型 123         int float
+				日期类型 '200-01-01' date
+				char和varchar区别
+				char 定长       char(10)  --6   -->10
+				varchar 变长    varchar(10) --6 -->6
+			2>表结构的创建
+				语法:
+				create table 表名(
+					列 数据类型,
+					列 数据类型,
+					...
+				);
+				需求:创建表商品(goods),商品名称(name)字符类型，价格(price)数值类型，出厂日期(ddate) 日期类型
+				create table goods(
+					name char(10),
+					price int,
+					ddate date
+				);
+			3>查看表结构
+				desc 表名;
+				需求:查看goods表表结构
+					desc goods;
+			4>修改表结构
+				增加列
+				需求:goods表中增加id列，数值类型
+					alter table goods add id int;	
+				修改列
+				需求:修改goods表的数据类型为字符类型
+					alter table goods modify id char(10);
+				删除列
+				需求:删除goods表中id列
+					alter table goods drop column id;
+			5>删除表结构
+				语法:drop table 表;
+				需求:删除goods表
+					drop table goods;
+
+		b4.管理mysql使用的工具
+			mysql workbench
+			sqlyog(小海豚)
+			navicat
+			dbeaver
+			phpmyadmin
+
 
 
 
