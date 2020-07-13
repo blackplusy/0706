@@ -69,3 +69,57 @@ tel:18028768679
 		linux       apache        mysql            (LAMP)
 		            nginx         mysql            (LNMP)
 		            tomcat        mysql、oracle
+3.win下部署ecshop项目
+	a.集成软件
+		xampp
+			x:任意操作系统
+			a:apache
+			m:mysql
+			p:php
+			p:perl
+		wamp
+			w:windows
+		phpstudy
+	b.phpstudy
+		1>下载和安装
+			建议下载phpstudy2016
+		2>文件夹简介
+			apache  web服务器apache的文件夹
+				bin 存放apche命令的位置
+				conf存放apache配置文件的位置
+				logs存放apache日志文件的位置
+				httpd.conf apache的配置文件
+			mysql   mysql软件文件夹
+				bin 存放mysql命令
+				data存放mysql数据位置
+				lib 存放mysql所需库文件的位置
+				my.ini mysql的配置文件
+			WWW
+				项目代码所在位置
+	c.检查apache和mysql是否正常
+		win+r--cmd(打开命令提示符)
+			查看进程
+			tasklist | find "httpd"
+			tasklist | find "mysqld"
+			tasklist 查看当前系统所有进程
+			|        管道，前面的输出作为后面的输入
+			find     搜索
+			查看端口
+			apache 80
+			mysql  3306
+			netstat -an | find "80"
+			netstat -an | find "3306"
+	d.下载ecshop压缩包
+	e.解压压缩包到phpstudy的WWW文件夹下
+	f.浏览器中输入http://127.0.0.1/ecshop1按照提示进行安装
+		配置环境注意
+		数据库主机：localhost
+		端口号    : 3306
+		用户名    : root
+		密码      : root
+		数据库名  : test
+
+
+
+
+
