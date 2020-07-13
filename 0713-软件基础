@@ -1,0 +1,71 @@
+1.软件基础、mysql基础
+2-4.mysql基础
+5.mongodb基础
+=============================
+HeyGor
+QQ、WECHAT:914338492
+tel:18028768679
+=============================
+1.常见的软件架构
+	QQ         c/s
+	微信        c/s   b/s
+	支付宝      c/s   b/s
+	淘宝        c/s   b/s
+	微博        c/s   b/s
+	LOL         c/s
+	腾讯视频    c/s   b/s 
+	美图        c/s   b/s
+	高德        c/s   b/s
+	a.单机软件
+		不需要网络就可以执行的应用程序
+		hackercon
+		defcon
+	b.b/s架构软件
+		b:浏览器
+			IE      百度  360  QQ  猎豹 傲游 UC 搜狗 
+			google   开发
+			firefox  测试 
+			safari   
+		s:服务器
+			性能非常牛逼的电脑
+		测试:测试关注的是不同浏览器、不同版本的兼容性问题
+	c.c/s架构软件
+		c:客户端
+			pc端        笔记本电脑、台式电脑、服务器
+			移动端      手机、ipad、智能终端
+		s:服务器
+			性能非常牛逼的电脑
+		测试:测试关注的是不同操作系统，不同位数的安装和反安装(软件捆绑)
+
+2.b/s架构的后端
+	a.前端
+		html 标记性语言 静态页面(服务器上什么样子，在浏览器上什么样子)
+		js   动态页面(动画、交互[和服务器进行通信])
+			 jquery  
+			 JavaScript
+			 java
+			 jsp java server page
+		css  样式表(美化)
+		ui   美工(美化)
+	b.后端
+		1>操作系统
+			unix
+			linux
+			windows
+		2>web服务器
+			apache  不支持java
+			nginx   轻量级web服务器(负载均衡、反向代理)
+			tomcat  java
+			iis     微软
+		3>数据库服务器
+			oracle  甲骨文
+			mysql   甲骨文
+			sqlserver 微软
+	c.常见搭配
+		系统       web服务器     数据库服务器
+		win          iis          sqlserver、access
+					apache        mysql
+					tomcat        mysql、oracle
+		linux       apache        mysql            (LAMP)
+		            nginx         mysql            (LNMP)
+		            tomcat        mysql、oracle
