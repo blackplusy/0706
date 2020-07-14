@@ -196,6 +196,18 @@
 		and sc.c#=c.c#
 		and c.cname='Maths';
 		select s# from sc where c# in ('C2','C4');
+8.导入sakila数据库
+	a.下载
+		https://dev.mysql.com/doc/index-other.html
+	b.解压压缩包
+	c.命令提示符进入到解压后的文件夹
+	d.登录mysql
+		mysql -u root -p
+	e.导入sakila-schema.sql
+		source sakila-schema.sql;
+	f.导入sakila-data.sql
+		source sakila-data.sql;
+		
 
 
 
