@@ -56,8 +56,79 @@
 			语法:truncate table 表;
 			需求:删除goods表中所有数据
 				truncate table goods;
-				
 
+3.SQL的分类
+	SQL：结构化查询语言
+		DDL 数据库定义语言    create alter drop truncate
+		DML 数据库操作语言    insert update delete
+		DCL 数据库控制语言    grant revoke
+		DQL 数据库查询语言    select
+4.数据的查询
+	a.查询的分类
+		简单查询
+		多表查询
+		分组查询
+		子查询
+	b.简单查询
+		http://www.ecshop119.com/ecshopjc-868.html
+		语法:select 列 from 表 where 条件;
+		select后面from前面是和列相关的
+		where后面是和行相关的
+		*代表所有列
+		需求:查询ecs_goods表中所有数据
+			select * from ecs_goods;
+		需求:查询ecs_goods表中商品名称是KD876的所有信息
+			select * from ecs_goods where goods_name='KD876';
+		需求:查询ecs_goods表中商品名称是KD876的本店售价
+			select shop_price from ecs_goods where goods_name='KD876';
+		需求:查询ecs_goods表中所有的商品名称和本店售价
+			select goods_name,shop_price from ecs_goods;
+5.where条件
+	a.比较运算符
+		>
+		<
+		=
+		>=
+		<=
+		!=
+		<>
+		需求:查询ecs_goods表中本店售价高于2000的所有商品信息
+			select * from ecs_goods where shop_price>2000;
+		需求:查询ecs_goods表中商品名称不是KD876的所有信息
+			select * from ecs_goods where goods_name<>'KD876';
+	b.关系运算符
+		and  同时满足
+		or   满足一个即可
+		not  不满足条件
+		需求:查询ecs_goods表中本店售价高于1000并且低于2000的所有商品信息
+			select * from ecs_goods where shop_price>1000 and shop_price<2000;
+		需求:查询ecs_goods表中商品名称是KD876的或者是诺基亚的所有信息
+			select * from ecs_goods where goods_name='KD876' or goods_name='诺基亚';
+	c.区间
+		between...and...
+		小在前，大在后，区间包括两个端点
+		需求:查询ecs_goods表中本店售价范围1388和1999之间的所有商品名称
+			select goods_name from ecs_goods where shop_price>=1388 and shop_price<=1999;
+			select goods_name from ecs_goods where shop_price between 1388 and 1999;	
+	d.空值
+		null 没有任何数据类型，没有任何值,空值不能用于比较和运算，查询时候使用is null或者is not null
+		需求:查询ecs_goods表中suppliers_id非空的所有信息
+			select * from ecs_goods where suppliers_id is not null;
+	e.模糊查询
+		当信息不完整时候使用，通常是和字符类型一起使用
+		like
+		_   一个字符
+		%   任意个字符
+		需求:查询ecs_goods表中商品名称以诺基亚开头的所有信息
+			select * from ecs_goods where goods_name like '诺基亚%';
+		需求:查询ecs_goods表中商品名称以6结尾的所有信息
+			select * from ecs_goods where goods_name like '%6';
+		需求:查询ecs_goods表中商品名称是6个字符的商品名称
+			select goods_name from ecs_goods where goods_name like '______';
+	f.in
+		或者的关系
+		需求:查询ecs_goods表中商品名称是KD876的或者是诺基亚的所有信息
+		select * from ecs_goods where goods_name in ('KD876','诺基亚');
 
 
 
