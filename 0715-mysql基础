@@ -126,7 +126,56 @@ and cu.first_name='MARY';
 			where g.cat_id=c.cat_id
 			group by c.cat_name
 			having count(goods_name)>8;
-			
+
+	查询每个国家有多少个城市,要求显示国家名称,城市数量?
+	select co.country,count(c.city)  from country co,city c
+	where co.country_id=c.country_id
+	group by co.country;
+	查询每个城市有多少个客户,要求显示城市名称,客户数量(计算客户id)
+	select c.city,count(customer_id) from city c,address a,customer cu
+	where c.city_id=a.city_id
+	and a.address_id=cu.address_id
+	group by c.city;
+	查询C开头的国家,每个国家有多少个城市
+	select co.country,count(c.city)  from country co,city c
+	where co.country_id=c.country_id
+	group by co.country
+	having co.country like 'C%';
+
+	select co.country,count(c.city)  from country co,city c
+	where co.country_id=c.country_id
+	and co.country like 'C%'
+	group by co.country;
+
+	城市数量超过30的国家名称
+	select co.country,count(c.city)  from country co,city c
+	where co.country_id=c.country_id
+	group by co.country
+	having count(c.city)>30;
+
+3.排序和分页
+	select 列 from 表
+		where 条件
+			group by 分组条件
+				having 分组后过滤条件
+					order by 排序条件
+						limit 限制条件
+	a.排序
+		顺序(从小到大)
+			order by 列 ;
+			order by 列 asc;
+		逆序(从大到小)
+			order by 列 desc;
+		需求:查询ecs_goods表所有商品名称和本店售价，按照本店售价从小到大进行排序
+		select shop_price,goods_name from ecs_goods order by  shop_price;
+		需求:查询ecs_goods表所有商品名称和本店售价，按照商品id从大到小进行排序
+		select shop_price,goods_name from ecs_goods order by  goods_id desc;
+	b.分页
+		需求:查询ecs_goods表所有前10行数据
+		select * from ecs_goods limit 10;
+		需求:查询ecs_goods表所11-15行数据
+		select * from ecs_goods limit 10,5;
+		
 
 
 
