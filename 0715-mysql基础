@@ -175,7 +175,26 @@ and cu.first_name='MARY';
 		select * from ecs_goods limit 10;
 		需求:查询ecs_goods表所11-15行数据
 		select * from ecs_goods limit 10,5;
-		
+--2.png
+	select count(*) from table1 t1,table2 t2
+	where t1.学生id=t2.学生id;
+	select t2.学生家庭住址   from table1 t1,table2 t2
+	where t1.学生id=t2.学生id
+	and t1.姓名 like '张%'
+	and t1.性别='女'
+	order by t1.姓名;
+
+--3.png
+	select * from dt_pay where salary>(select avg(salary) from dt_pay);
+	select * from dt_pay;
+	truncate table dt_pay;
+--5.bmp
+	select avg(english) from mark;
+	select m.math,c.name,c.address,c.telno  from cust c,mark m 
+	where c.studentno=m.studentno
+	and c.studentno in (11,22,33,44,55);
+
+
 
 
 
