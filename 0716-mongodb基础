@@ -1,0 +1,78 @@
+
+--6.jpg
+create table user (
+	userid int primary key,
+	username varchar2(20) not null,
+	password varchar2(20) not null,
+	crtime   date not null
+);
+insert into user values(1002,'username','password','2015-01-01');
+--4.png
+1>
+	select xm,zkzh from tb_student where score>0 and score<5;
+	select * from tb_student where xm='张三' and score=5;
+2>
+	select c.成绩表 from 学生表 s,成绩表 c
+	where s.准考证号=c.准考证号
+	and s.年龄 between 20 and 35
+	order by c.准考证号 desc;
+--华为.jpg
+	select * from student order by ssex desc;
+	select * from score where degree between 80 and 100;
+==========================================================
+1.mongodb的下载和安装
+	a.mongodb的下载
+		a1.操作系统类型
+			unix
+			linux
+			windows
+		a2.操作系统位数
+			i386 i686 x86   32位
+			x86_64 x64      64位
+			计算机--属性
+		a3.软件版本
+			msi:microsoft installer
+	b.安装
+		b1.解压压缩包
+		b2.设置环境变量
+			计算机--属性--高级--环境变量--系统变量--Path中添加mongodb的bin的路径--确定X3
+2.mongodb的启动
+	mongodb是一款c/s架构软件
+	c----------/-----------s
+	mongo                 mongod
+	a.启动mongodb服务(命令提示符)
+		mongod --dbpath f:\data 
+		mongod --dbpath f:\data --logpath f:\data\mongo.log
+		mongod mongodb的主服务
+		dbpath mongodb数据存放的路径
+		logpath mongodb日志存放的位置
+	b.检查服务和端口
+		tasklist | find "mongod"
+			查看mongodb进程是否正常
+		netstat -an | find "27017"
+			查看mongodb的端口是否正常
+		mongodb端口:27017
+	c.登录
+		mongo
+			登录本地test数据库
+		mongo 127.0.0.1/admin
+			登录IP为127.0.0.1的admin数据库
+		mongo 127.0.0.1:27017/admin
+			登录IP为127.0.0.1的端口为27017的admin数据库
+3.基础命令
+	mysql     mongodb
+	数据库    数据库
+	表        集合
+	数据      文档
+	db
+		查看当前数据库的名字
+	show databases
+	show dbs
+		查看当前有哪些数据库
+	use admin
+		进入到admin数据库
+	show tables
+	show collections
+		查看当前数据库有哪些集合
+	db.system.version.find()
+		查询system.version集合中所有文档
