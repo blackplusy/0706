@@ -99,5 +99,53 @@ insert into user values(1002,'username','password','2015-01-01');
 		db.xiyouji.remove({age:100})
 	删除所有文档
 		db.xiyouji.remove({})
+7.文档的查询
+	查询所有文档
+		db.xiyouji.find()
+	查询指定文档
+		db.xiyouji.find({name:'nezha'})
+	查询指定属性
+		db.xiyouji.find({},{_id:0,age:1})
+	查询指定文档的指定属性
+		db.xiyouji.find({name:'tangsir'},{_id:0,hobby:1})
+8.查询表达式
+	https://docs.mongodb.com/manual/reference/operator/query/#query-selectors
+	比较
+		$gt 	大于
+		$lt  	小于
+		$gte    大于等于
+		$lte    小于等于
+		$ne     不等于
+		db.xiyouji.find({age:{$gte:100}})
+		db.xiyouji.find({name:{$ne:'nezha'}})
+	关系
+		$and
+		$or
+		$not
+		db.xiyouji.find({$and:[{age:{$gte:100}},{age:{$lte:500}}]})
+		db.xiyouji.find({$or:[{name:'nezha'},{name:'redhair'}]})
+	存在性
+		$exists  属性是否存在
+		db.xiyouji.find({hobby:{$exists:1}})
+	数据类型
+		$type
+		1:整型
+		2:字符串
+		3:对象
+		4:数组
+		5:二进制数据
+		7:对象id
+		8:布尔
+		9:日期
+		10:空
+		db.xiyouji.find({age:{$type:1}})
+		db.xiyouji.find({age:{$type:2}})
+	空值
+		null
+		db.xiyouji.find({name:null})
+		db.xiyouji.find({name:{$ne:null}})
+
+
+
 
 
