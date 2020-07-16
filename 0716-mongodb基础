@@ -76,3 +76,28 @@ insert into user values(1002,'username','password','2015-01-01');
 		查看当前数据库有哪些集合
 	db.system.version.find()
 		查询system.version集合中所有文档
+4.CURD(增删改查)
+	文档的新增
+		db.xiyouji.insert({name:'5kong'})
+	文档的修改
+		db.xiyouji.update({age:30},{$set:{name:'shasir'}})
+	文档的删除
+		db.xiyouji.remove({age:30})
+	文档的查询
+		db.xiyouji.find({age:30})
+5.文档的新增
+	新增普通文档
+		db.xiyouji.insert({name:'tangsir',age:100,hobby:'jing'})
+	新增文档指定_id
+		db.xiyouji.insert({_id:0,name:'tai2'})
+	新增多个文档
+		db.xiyouji.insert([{name:'redhair'},{name:'nezha'},{name:'niumo'}])
+	新增内嵌文档
+		db.xiyouji.insert({name:'kingkong',jingli:{kill:100,hit:2}})
+6.文档的删除
+	删除指定文档
+		db.xiyouji.remove({age:100})
+	删除所有文档
+		db.xiyouji.remove({})
+
+
