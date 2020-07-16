@@ -145,7 +145,19 @@ insert into user values(1002,'username','password','2015-01-01');
 		db.xiyouji.find({name:null})
 		db.xiyouji.find({name:{$ne:null}})
 
-
-
+9.文档的修改
+	a.修改指定文档
+		$set
+		db.xiyouji.update({name:'5kong'},{$set:{age:1000}})
+	b.覆盖文档
+		db.xiyouji.update({name:'5kong'},{age:0})
+	c.删除属性
+		$unset
+		db.xiyouji.update({name:'8jie'},{$unset:{'age':400}})
+	d.自增
+		$inc
+		db.xiyouji.update({age:{$exists:1}},{$inc:{age:-100}})
+	e.修改多行
+		db.xiyouji.update({name:'8jie'},{$set:{age:100}},{multi:true})
 
 
