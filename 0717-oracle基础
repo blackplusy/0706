@@ -124,6 +124,87 @@
 		切换用户
 	show user
 		查看当前用户的用户名
+	desc goods
+		查看goods表的表结构
+
+8.表
+	a.数据类型
+		字符    char varchar varchar2
+		数值    number
+		日期    date
+	b.建表语法
+		create table 表 (
+			列  数据类型,
+			列  数据类型
+		);
+		create table user1(
+	       username char(10),
+	       passwd   char(10)
+		);
+	c.查看表结构
+		sqlplus 
+		desc 表名;
+	d.修改表结构
+	e.删除表结构
+		语法:drop table 表名;
+		drop table goods;
+	f.约束
+		主键约束 列中数据唯一，不能为空，每张表中只能有一个
+		唯一约束 列中数据唯一，可以为空，作为主键约束的补充
+		非空约束 列中的数据是否为空
+		检查约束 列中的数据是否满足条件
+		外键约束 列中的数据依赖于另外一张表中的数据
+		语法:
+		create table 表 (
+			列  数据类型 primary key,
+			列  数据类型 unique,
+			列  数据类型 check(检查条件),
+			列  数据类型 not null,
+			列  数据类型 references 被参考表(被参考列)
+		)
+		f1.主键约束
+			创建表user2，用户名字(username) 字符类型，用id(id) 数值类型，主键约束
+			create table user2 (
+				username char(10),
+				id  number primary key
+			);
+		f2.查看约束
+			1>右键表--view
+			2>箭头
+		f2.唯一约束
+			创建表商品，商品名称 字符类型 唯一约束，商品价格 数值类型
+			create table 商品(
+				商品名称   char(10) unique,
+				商品价格   number
+				);
+		f3.非空约束
+			列中的数据不能为空
+			创建表student，学生名字 name1 非空，学生年龄 age 数值类型
+			create table student (
+				name1 char(10) not null,
+				age number
+				);
+		f4.检查约束
+			创建表员工，名字 字符类型，性别只能是男或者女
+			create table 员工(
+				名字  char(10),
+				性别 char(10) check(性别='男' or 性别='女')
+			);
+		f5.外键约束(参考约束)
+			被参考的被参考列一定存在
+			参考列和被参考列的数据类型必须一致
+			被参考列必须是主键约束
+			创建表用户信息，里面2个列，用户id 主键，用户信息
+			create table 用户信息 (
+					id number primary key,
+					用户信息  char(10)
+				);
+			创建表订单信息，里面2个列，用户id 参考用户信息表中的用户id，订单信息
+			create table 订单信息(
+				id number references 用户信息(id),
+				订单信息 char(10)
+			);
+			
 
 
 
