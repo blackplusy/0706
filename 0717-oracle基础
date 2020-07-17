@@ -1,0 +1,62 @@
+1.常见数据库软件
+	oracle
+	mysql
+	sqlserver
+2.oracle的版本
+	8i
+	9i          
+		i:internet 
+	10g
+	11g
+		g:grid
+	12c
+		c:cloud
+	。。。
+3.oracle的安装
+	a.下载
+		操作系统类型
+		操作系统位数
+		软件版本
+	b.傻瓜安装
+4.管理oracle使用的工具
+	a.sqlplus  命令
+	b.isqlplus 
+	c.em       企业管理器
+	d.plsql developer
+	e.sql developer 
+	f.navicat
+	g.toad
+5.oracle的架构
+	20110930
+	补充：win server 用户密码修改
+		右键计算机--管理--本地用户和组-用户--administer--右键修改密码
+	c---------------------/--------------------s
+	客户端                                    服务端
+	TNS的配置								  oracle的主服务
+											  oracle的监听服务
+	a.oracle的服务
+		a1.图形化:计算机--管理--服务和应用程序--服务
+			oracle的主服务:		OracleServicexxx
+			oracle的监听服务:	Oracle...TNSlistener
+		a2.命令方式（命令提示符【win+r--cmd】）
+			查看数据库服务的运行情况
+				sqlplus / as sysdba (登录本机上的oracle数据库)
+				注意:如果看到已连接到空闲例程说明数据库没有启动
+				启动oracle数据库
+					startup
+				查看oracle运行情况
+					select status from v$instance;
+				关闭oracle数据库
+					shutdown immediate;
+			查看监听服务的运行情况
+				查看监听运行情况
+				lsnrctl status
+				启动监听
+				lsnrctl start
+				关闭监听
+				lsnrctl stop
+			配置监听
+				win+r--cmd--netca--监听程序配置--删除--Listener--是--配置完成--监听程序配置--添加--Listener--端口号1521--否
+
+
+
