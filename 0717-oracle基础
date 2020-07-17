@@ -293,7 +293,7 @@
 		loc   部门地址
 	需求:查询SCOTT所在部门
 		select d.dname  from emp e inner join dept d on e.deptno=d.deptno
-		and e.ename='SCOTT';
+		where e.ename='SCOTT';
 	需求:自连查询
 		查询SCOTT的上司的名字
 		select mgr from emp where ename='SCOTT';
