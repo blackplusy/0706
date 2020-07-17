@@ -27,7 +27,6 @@
 	f.navicat
 	g.toad
 5.oracle的架构
-	20110930
 	补充：win server 用户密码修改
 		右键计算机--管理--本地用户和组-用户--administer--右键修改密码
 	c---------------------/--------------------s
@@ -57,6 +56,74 @@
 				lsnrctl stop
 			配置监听
 				win+r--cmd--netca--监听程序配置--删除--Listener--是--配置完成--监听程序配置--添加--Listener--端口号1521--否
+	b.TNS的配置
+		C:\oracle\product\10.2.0\db_1\NETWORK\ADMIN\tnsnames.ora
+			ORCL =                                                                    标识
+			  (DESCRIPTION =
+			    (ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.190.129)(PORT = 1521))     协议、IP地址、端口号
+			    (CONNECT_DATA =
+			      (SERVER = DEDICATED)
+			      (SERVICE_NAME = orcl)                                               数据库的名字
+			    )
+			  )
+		win中查看当前IP
+			win+r--cmd--ipconfig
+		测试TNS配置是否正确
+			win+r--cmd--tnsping orcl
+6.用户和权限
+	a.管理员
+		sys、system 登陆时候必须使用sysdba角色，其他用户不要使用sysdba角色
+		普通用户登录使用normal
+	b.角色
+		一组权限的集合
+		sysdba        管理员权限
+		sysoper       系统操作员
+		normal        普通用户权限
+	c.用户操作
+		c1.创建用户	
+			语法:create user 用户名 identified by 密码;
+			需求：创建用户kobe，密码nba
+				create user kobe identified by nba;
+			登录测试
+				1>sqlplus 用户名/密码
+				2>plsql developer 中切换
+		c2.修改用户
+			1>修改密码
+				语法:alter user 用户 identified by 密码;
+				需求:修改kobe用户密码为cba
+					alter user kobe identified by cba;
+			2>锁定和解锁
+				语法:alter user 用户 [identified by 密码 ] account unlock(lock);
+				需求:解锁scott用户
+					alter user scott account unlock;
+		c3.删除用户
+			语法：drop user 用户;
+				需求:删除用户kobe
+					drop user kobe;
+	d.权限
+		dba       	管理员权限
+		connect     链接数据库权限
+		resource    调用数据库权限
+		d1.授权
+			一般普通用户赋予connect和resource权限
+			语法:grant 权限 to 用户;
+			需求:赋予kobe用户connect和resource权限
+				grant connect,resource to kobe;
+		d2.回收授权
+			语法:revoke 权限 from 用户;
+			需求:回收kobe用户链接数据库权限
+				revoke connect from kobe;
+7.sqlplus基本命令
+	sqlplus / as sysdba 
+		管理员登录本地数据库
+	sqlplus sys@orcl as sysdba
+		管理员登录标识为orcl的数据库以sysdba身份
+	sqlplus kobe@orcl
+		kobe用户登录标识为orcl的数据库
+	conn kobe/cba
+		切换用户
+	show user
+		查看当前用户的用户名
 
 
 
