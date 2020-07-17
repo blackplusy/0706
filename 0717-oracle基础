@@ -204,7 +204,134 @@
 				id number references 用户信息(id),
 				订单信息 char(10)
 			);
-			
+9.练习
+	create table 同学表(
+		学号  char(6) primary key,
+		姓名  char(10) not null,
+		性别  char(10) check(性别='男' or 性别='女'),
+		年龄  number not null,
+		民族  char(20) default '汉' not null,
+		身份证号 char(50) unique,
+		宿舍号 char(6) references 宿舍表(宿舍号)
+	);
+	create table 宿舍表(
+		宿舍号  char(6) primary key,
+		宿舍电话 number check(宿舍电话>=6330000 and 宿舍电话<=6339999)
+	);
+10.事务
+	SQL
+		DML   数据库操作语言  insert update delete
+	一件事有开端就一定有结尾
+	HeyGor<======银行<======大佬们
+	开端:告知银行转账
+	结束:转账成功、转账失败
+	DML语句会触发事务的开始，一定要结束
+		commit     提交数据到数据库中
+		rollback   数据库回滚到最后一次提交的状态
+11.数据的新增、修改删除
+	数值类型直接使用
+	字符类型单引号
+	日期类型 to_date()
+			sysdate 当前时间
+			to_date('2000-01-01 20:00:00','YYYY-MM-DD hh24:mi:ss')
+	a.数据的新增
+		insert into 表 values(值1,值2.....)
+	b.数据的修改
+		update 表 set 列=值 where 条件;
+	c.数据的删除
+		语法:delete [from] 表 where 条件;
+		delete a where 出厂日期=to_date('2000-01-01','YYYY-MM-DD');
+		语法:truncate table 表;
+12.数据的查询
+	比较
+		>
+		<
+		=
+		>=
+		<=
+		!=
+		<>
+	关系
+		and
+		or
+		not
+	区间
+		between...and..
+	空值
+		nvl()
+			select comm,nvl(comm,0) from emp;
+		nvl2()
+	模糊查询
+		like
+		_
+		%
+	常用函数
+		round()  小数点后保留几位
+			select comm,nvl(comm,0) from emp;
+		upper()  大写
+		lower()  小写
+		initcap() 首字母大写
+			select ename,lower(ename),initcap(ename),upper(lower(ename)) from emp;
+		distinct() 去重
+			select distinct(deptno) from emp;
+
+13.多表查询
+	语法:select 列 from 表1,表2 where 表1.列=表2.列;
+	     select 列 from 表1 inner join 表2 on 表1.列=表2.列;
+	emp:
+		empno 员工号
+		ename 名字
+		job   职位
+		mgr   上司的员工号
+		hiredate 入职日期
+		sal  工资
+		comm 佣金
+		deptno 部门号
+	dept:
+		deptno 部门号
+		dname 部门名称
+		loc   部门地址
+	需求:查询SCOTT所在部门
+		select d.dname  from emp e inner join dept d on e.deptno=d.deptno
+		and e.ename='SCOTT';
+	需求:自连查询
+		查询SCOTT的上司的名字
+		select mgr from emp where ename='SCOTT';
+		select ename from emp where empno=(select mgr from emp where ename='SCOTT');
+
+		select a.ename,b.ename  from emp a,emp b
+		where a.mgr=b.empno
+		and a.ename='SCOTT';
+	左联查询(左表数据都有)
+		create table a (
+			a number
+		);
+		insert into a values(1);
+		insert into a values(2);
+		insert into a values(3);
+		create table b(
+			b number,
+			c char(10)
+		);
+		insert into b values(1,'a');
+		insert into b values(2,'b');
+		insert into b values(4,'d');
+		commi;
+
+		语法:
+			select 列 from 左表 left jion 右表 on 左表.列=右表.列;
+			查询出来结果
+				内联查询结果+左表中有右表中没有的右表显示为空
+		select * from a,b where a.a=b.b;
+		select * from a left join b on a.a=b.b;
+	右联查询(右边中所有数据都有)
+		语法:select 列 from 左表 right join 右表 on 左表.列=右表.列;
+
+
+
+
+
+
 
 
 
