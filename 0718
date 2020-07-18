@@ -1,0 +1,55 @@
+1.分组
+	a.分组函数
+		max()   最大
+		min()   最小
+		avg()   平均
+		sum()   求和
+		count() 计数
+	b.分组
+		select 列 from 表
+			where 条件
+				group by 分组条件
+					having 分组后过滤条件
+		双分组(按照两个条件进行分组)
+		需求:每个部门、每个职位的最高薪资
+			select deptno,job,max(sal) from emp group by deptno,job
+		where  分组前过滤，不能直接跟分组函数
+		having 分组后过滤，可以直接跟分组函数
+2.子查询
+	一条SQL语句的执行依赖于另外一条SQL语句的执行结果
+	需求:查询emp表中工资最高的人的名字
+		select max(sal) from emp;
+		select ename from emp where sal=(select max(sal) from emp);
+	分为单行子查询和多行子查询
+	单行    =或者in
+	多行    in
+3.all、any函数
+	需求:查询emp表中工资高于1000，1500，2000中任意一个的人的所有信息
+	select * from emp where sal>any(1000,1500,2000);
+	需求:查询emp表中工资高于1000，1500，2000中所有的人的所有信息
+	select * from emp where sal>all(1000,1500,2000);
+4.排序和分页
+	a.排序
+		顺序   从小到大
+			order by 列;
+		倒序   从大到小
+			order by 列 desc;
+		需求:查询emp表中所有数据，按照工资从大到小进行排列
+			select * from emp order by sal desc;
+		需求:查询emp表中所有数据，按照部门号，薪资降序排列
+			select * from emp order by deptno,sal desc;
+	b.分页
+		伪列
+		rowid    标识物理存储位置
+		rownum   行号，不属于任何一张表，包括1
+		需求:查询emp表中前10行数据
+			select * from emp where rownum<=10;
+		需求:查询emp表中8到14行数据
+			select * from emp where rownum>=8 and rownum<=14;
+			select * from (select t.*,rownum rn from emp t)
+			where rn>=8 and rn<=10;
+
+
+
+
+
