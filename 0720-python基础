@@ -32,3 +32,44 @@
 	d.安装
 		d1.Add Python To Path(打勾)
 		d2.install now
+3.python常用的开发工具
+	sublime text
+	pycharm  (社区、专业版)
+	eclipse+pydev
+	vi/vim
+4.python的运行环境
+	a.win+r--cmd(命令提示符)--python
+	b.win+r--cmd--python 文件名
+	c.IDE开发工具 
+	d.IDLE
+		FILE-NEW FILE--ctl+s--写代码--运行
+5.python的输入和输出
+	a.输出的应用场景
+		1.某宝中搜索出来的商品
+		2.访问网页不存在(404)
+		3.调试程序时候输出
+		4.前后端交互
+	b.输入的应用场景
+		1.注册用户时候填写信息
+		2.某宝中输入搜索信息
+		3.直播时候信息来源
+	c.python的输出
+		1.直接输出
+		2.变量输出
+		3.函数输出
+		4.格式化输出
+	d.输入
+		1.input  
+			python2中接受键盘传入数值类型信息
+			python3中接受键盘传入的字符类型信息
+		2.raw_input
+			python2中接受键盘传入字符类型信息
+			python3中已经废弃
+	e.数据类型
+		type() 查看数据
+		int()  转换数据为整型
+		str()  转换数据为字符类型
+
+
+
+
