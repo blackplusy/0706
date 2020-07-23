@@ -49,3 +49,34 @@
 			pip install pymongo
 			python中运行
 			import pymongo
+3.python+pycharm+selenium
+	a.安装python
+		Add Python To Path
+	b.安装pycharm
+		社区版
+			https://download.jetbrains.8686c.com/python/pycharm-community-2020.1.4.exe
+			http://192.168.4.222:88/
+		专业版(多了web相关插件)
+		安装:傻瓜安装
+	c.pycharm的配置
+		interpreter:默认是虚拟环境中的python
+		把interpreter配置为当前系统中的python
+		config--settings--project interpreter--python interpreter--点击螺丝--add--搜索本机上python---make xxx projects--apply--ok
+	d.安装selenium模块
+		win+r--cmd--pip install selenium
+		下载对应浏览器的webdriver驱动
+			selenium2.x版本驱动自带firefox，selenium3.x所有浏览器驱动都要单独下载，webdriver和浏览器的版本一定要对应
+		建议:关闭浏览器自动更新
+		1>查看浏览器的版本(chrome)	
+			帮助--关于xxx( 83.0.4103.106)
+		2>搜索浏览器对应版本的驱动
+			下载地址:http://npm.taobao.org/mirrors/chromedriver/
+		3>把下载好的webdriver驱动文件放入python的安装文件夹下
+		4>测试代码
+			#coding=utf-8
+			#导入webdriver
+			from selenium import webdriver
+			#定义驱动
+			br=webdriver.Chrome()
+			#打开网页
+			br.get("https://www.baidu.com")
