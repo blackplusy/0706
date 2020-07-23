@@ -1,0 +1,51 @@
+1.变量的作用域
+	a.全局变量和局部变量
+		全局变量:定义在函数外的变量
+		局部变量:定义在函数内的变量
+		获取变量值时候先获取当前作用域名称和变量值，如果没有找到，到上一级作用域去找，如果没有就报错
+	b.局部变量
+		不同函数可以定义相同的变量名字(局部变量)，互相不影响
+	c.全局变量
+		声明在函数外的变量
+		当全局变量和局部变量同名时候，优先使用局部变量
+		global变量在函数体内声明为全局变量
+2.模块
+	a.模块的定义
+		python中模块就是一个以.py结尾的文件
+		模块可以把复杂程序按照功能拆分开，分别放在不同文件夹中使用
+		公共模块放在python安装文件夹下Lib中
+	b.模块的使用方法
+		模块都是以.py结尾的文件
+		模块的导入方式
+			import 模块
+				调用模块中函数时候一定要加模块名字
+			from 模块 import xxx
+				直接使用已经导入的模块
+			from xxxx import *
+			import xxx as xxx
+	c.os模块的使用
+		os模块是系统自带模块，需要使用必须进行导入
+	d.sys模块
+		sys.version  当前python的版本号
+		sys.path     python的环境变量
+	e.模块的安装
+		建议:搜索模块时候找pypi
+		1.单文件模块
+			安装方法:直接拷贝文件到指定目录$python/Lib
+		2.多文件模块
+			安装方法：下载模块压缩包，解压，解压后进入到文件夹中执行python setup.py install
+			例子:下载安装pymysql模块
+			https://pypi.org/project/PyMySQL/#files
+		3.easy install 方式
+			easy install 包名字
+			easy install 包.egg
+		4.pip方式
+			系统中已经安装好pip，已经设置好环境变量
+			注意:不要升级pip
+			例子:安装pymongo
+			python中运行
+			import pymongo
+			打开命令提示符
+			pip install pymongo
+			python中运行
+			import pymongo
