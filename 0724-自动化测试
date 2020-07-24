@@ -1,0 +1,71 @@
+1.什么是自动化
+	没有人或者人数比较少时候，按照人的要求，自动检测，信息处理，分析判断，操纵空值，实现预期目标
+2.什么是自动化测试
+	包含单元测试，接口测试，UI测试，主要是编写代码、脚本让软件自动运行发现bug(缺陷)，代替部分手工测试
+3.自动化测试发展趋势
+	测试在更多的浏览器中执行，越来越多的人使用最新版本
+	真实设备和模拟器混合成为新的测试标准
+	自动化测试价值明显
+	敏捷和DEVOPS使用较多，bug修复速度并没有加快
+	补充:敏捷开发
+		强调程序员和业务之间协作、面对面
+		比书面文档更有效，适合频繁交付的版本
+		注重软件开发过程中人的作用
+4.自动化测试的优缺点
+	优点:
+		回归测试更方便(程序修改频繁，效果明显)
+		运行更繁琐的测试(较少的时间做较多的测试)
+		执行一些手动测试困难或者不能进行的一些测试(大用户量，不能有足够的人员，可以通过自动化模拟多个用户)
+		更好的利用资源
+		测试具有一致性和重复性(脚本重用)
+	缺点:
+		不能替代手工测试
+		手工测试比自动化发现的缺陷更多，自动化测试不容易发现新bug
+		对测试质量的依赖性比较大:自动化测试脚本正常运行之前，先经过功能测试
+		自动化测试可能会制约软件
+5.主流测试框架(web)
+	QTP/UFT
+	selenium
+	robot framework
+6.selenium的特点
+	开源、免费
+	多浏览器支持  Firefox，Chrome，IE，Opera，Safari
+	多平台支持    Linux Windows unix
+	多语言支持    JAVA  PYTHON RUBY PHP C# js
+	对web有良好的支持
+	简单(API),灵活(语言驱动)
+	支持分布式测试用例执行
+7.webdriver驱动原理
+	大概过程:
+	执行脚本，webdriver会启动一个新的线程去启动一个浏览器，浏览器理解为服务器，脚本是客户端，通过脚本控制浏览器，脚本发送一个请求给浏览器，浏览器处理后返回给脚本
+	webdriver的角色
+		自动化测试代码
+		浏览器的驱动
+		浏览器
+8.css定位
+	a.单一属性定位
+		a1.标签选择器
+			find_element_by_css_selector('input')
+		a2.id定位
+			find_element_by_css_selector("#kw")
+		a3.class定位
+			find_element_by_css_selector(".s_ipt")
+		a4.其他属性定位
+			find_element_by_css_selector("[name='wd']")
+	b.组合属性定位
+		b1.id组合属性定位
+			find_element_by_css_selector("input.#kw")
+		b2.class组合属性
+			find_element_by_css_selector("input.s_ipt")
+		b3.其他属性组合定位
+			find_element_by_css_selector("input[name='wd']")
+			$("input[name='wd']")
+		b4.只有属性名没有值定位
+			$('input[autocomplete]')
+			find_element_by_css_selector("input[autocomplete]")
+	c.层级定位
+		$('#form>span>input')
+		id是form的子代的span标签的子代input标签
+
+	d.F12调试功能
+		$()
