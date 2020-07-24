@@ -103,3 +103,17 @@
 		or    满足一个条件即可
 		$x("//a[@class='mnav c-font-normal c-color-t' and @href='http://news.baidu.com']")
 		find_element_by_xpath("//a[@class='mnav c-font-normal c-color-t' and @href='http://news.baidu.com']")
+10.框架切换
+	1.切换到frame里面(switch_to.frame(参数))
+		参数可以用来定位frame，传入id，name都可以
+	2.从frame切换到主文档
+		切换到frame中，不能继续操作主文档中的内容，如果需要操作需要返回主文档
+		switch_to.default_content()
+	3.嵌套frame操作
+		开发时候会有frame嵌套
+		1.从主文档切换到frame2，一层一层进入
+			br.switch_to.frame('frame1')
+			br.switch_to.frame('frame2')
+		2.子frame切换回父frame
+			相当于后退，随意切换
+			br.switch_to.parent_frame() #如果当前是主文档，无效
