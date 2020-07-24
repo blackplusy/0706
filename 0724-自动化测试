@@ -119,7 +119,7 @@
 			br.switch_to.parent_frame() #如果当前是主文档，无效
 11.任务：
 	1.登录ecshop后台
-		127.0.0.1/admin
+		127.0.0.1/ecshop1/admin
 	2.添加新商品
 	3.搜索刚才添加的商品
 	4.搜索出来商品和刚开始添加的商品名称作比较
@@ -137,4 +137,3 @@ br.find_element_by_xpath("//*[@name='sel_question']").send_keys("我最好朋友
 
 
 
-	
