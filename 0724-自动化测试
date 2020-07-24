@@ -69,3 +69,37 @@
 
 	d.F12调试功能
 		$()
+9.xpath定位
+	xpath定位参考:https://www.w3school.com.cn/xpath/index.asp
+	针对于xml的路径语言，通过元素的路径来找到这个元素
+	a.工具
+		F12
+		Firebug
+	b.用法
+		/   绝对路径，从根节点开始
+		//  相对路径，所有子节点中搜索对应的元素
+		@   选取属性
+		.   当前节点
+		..  上一级节点
+		通过浏览器的F12中console调试$x()
+	c.xpath支持id，class,name定位
+		通过id定位
+		$x("//*[@id='kw']")
+		通过class定位
+		$x("//*[@class='s_ipt']")
+		通过name定位
+		$x("//*[@name='wd']")
+	d.其他属性定位
+		$x("//*[@autocomplete]")
+	e.通过层级定位元素
+		e1.通过相对路径定位
+			$x("//a")
+			$x("//a[@class='mnav c-font-normal c-color-t']")
+			$x("//a[@class='mnav c-font-normal c-color-t'][3]")
+		e2.通过绝对路径定位
+			$x('/html/body/div[1]/div[1]')
+	f.xpath的运算符
+		and   同时满足条件
+		or    满足一个条件即可
+		$x("//a[@class='mnav c-font-normal c-color-t' and @href='http://news.baidu.com']")
+		find_element_by_xpath("//a[@class='mnav c-font-normal c-color-t' and @href='http://news.baidu.com']")
