@@ -63,4 +63,16 @@
 6.多态
 	多种形态，一个方法能表现出不同的形态，同一个操作方法针对不同对象产生不同的解释，不同结果
 	+：多态
-	
+7.selenium对浏览器的操作
+	a.控制浏览器大小
+		set_window_size(480,800)
+	b.窗口最大化、最小化
+		minimize_window()
+		maximize_window()
+	c.浏览器的前进和后退
+		前进 forward()
+		后退 back()
+		刷新 refresh()
+	d.窗口截屏
+	e.切换句柄
+		
