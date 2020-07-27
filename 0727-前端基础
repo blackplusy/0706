@@ -1,0 +1,58 @@
+HeyGor
+QQ\WECHAT:914338492
+tel:18028768679
+====================
+1.常见的软件架构
+	a.常用软件
+		微信    c/s   b/s
+		QQ     c/s   
+		支付宝  c/s   b/s
+		LOL   c/s
+		王者荣耀 c/s
+		淘宝    c/s   b/s
+		高德    c/s   b/s
+		网易云音乐  c/s   b/s
+		爱奇艺   c/s   b/s
+		快播     c/s   b/s
+	b.单机软件
+		不需要网络就可以执行的应用程序
+	c.b/s架构软件
+		b:浏览器
+			IE       QQ   360    夸克   UC   傲游   搜狗
+			chrome   开发
+			firefox  测试 
+			safari   苹果
+		s:服务器
+			性能特别牛逼的电脑
+		测试:不同浏览器，不同版本的兼容性问题
+	d.c/s架构软件
+		c:客户端
+			pc端   
+				电脑 服务器
+			移动端
+				手机  ipad  智能终端
+		s:服务器
+			性能特别牛逼的电脑
+		测试:不同操作系统，不同位数的安装和反安装
+2.前端和后端
+	前端
+		html  标记性 静态网页（服务器上显示和浏览器中显示一致）
+		css   样式表 美化  懂代码
+		js    JavaScript  动态网页(动画、交互)  前端开发语言
+			  java        后端开发语言
+			  jquery      
+		ui    用户接口  美工
+	b/s架构后端
+		操作系统
+			unix     mac ios
+			linux    安卓  redhat
+			windows  win7
+		web服务器
+			apache 不支持java
+			nginx  轻量级web服务器(负载均衡、反向代理)
+			tomcat java
+			iis    微软
+		数据库服务器
+			oracle   
+			mysql    
+			sqlserver
