@@ -1,0 +1,17 @@
+1.svn操作
+	a.软件下载
+		https://tortoisesvn.net/downloads.html
+	b.上传
+		1>右键桌面--小乌龟--repo borwser
+		http://192.168.4.222:81/svn/0727/0727
+		用户名 web
+		密码   web
+		2>下载代码后通过更新上传
+		右键文件夹--svn commit
+	c.下载
+		1>右键桌面--小乌龟--repo borwser
+		http://192.168.4.222:81/svn/0727/0727
+		用户名 web
+		密码   web
+		2>右键文件夹--svn checkout
+2.特殊符号
