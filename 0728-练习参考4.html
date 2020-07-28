@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.input {
+			outline: none;   /*去掉input控件的边框样式*/
+			width: 400px;   /* 设置输入框宽度*/
+		}
+		div {
+			width: 100px;    /*宽度 100 像素*/
+			height: 30px;    /*高度 30像素*/
+			background: red; /*背景颜色 红色*/
+			text-align: center;  /*文字水平居中*/
+			line-height: 30px;   /*行高*/
+			border-radius: 50px; /*边框翻转*/
+		}
+	</style>
+</head>
+<body>
+	<form action="test.php">
+		<table  >
+			<tr>
+				<td align="right">用户名</td>
+				<td colspan="3">
+					<input type="text" class="input">
+				</td>
+			</tr>
+			<tr>
+				<td align="right">密码</td>
+				<td colspan="3">
+					<input type="password" class="input">
+				</td>
+			</tr>
+			<tr>
+				<td align="right">确认密码</td>
+				<td colspan="3">
+					<input type="password" class="input">
+				</td>
+			</tr>
+			<tr>
+				<td align="right">验证码</td>
+				<td><input type="password" ></td>
+				<td>
+					<img src="2.png" >
+				</td>
+				<td>点击切换</td>
+			</tr>
+		</table>
+		<div>
+			立即注册
+		</div>
+	</form>
+</body>
+</html>
