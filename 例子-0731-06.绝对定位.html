@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		div {
+			width: 200px;
+			height: 200px;
+		}
+		.d1 {
+			background-color: blue;
+		}
+		.d2 {
+			background-color: pink;
+			/*绝对定位会脱离文档流，行将不行，块将不块*/
+			position: absolute;
+			left:200px;
+			top:200px;
+		}
+		.d3 {
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<div class="d1"></div>
+	<div class="d2"></div>
+	<div class="d3"></div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		div {
+			width: 100px;
+			height: 100px;
+		}
+		.d1 {
+			background-color: pink;
+		}
+		.d2 {
+			background-color: blue;
+			/*position: static 静态的不是定位元素*/
+			/*只要有一个元素是定位元素就会有4个属性*/
+			/*只需要修改自身就可以，不会影响其他元素*/
+			position: relative;
+			left: 100px;
+			top: 100px;
+		}
+		.d3 {
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<div class="d1"></div>
+	<div class="d2"></div>
+	<div class="d3"></div>
+</body>	
+</html>
