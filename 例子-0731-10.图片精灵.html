@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		/*为什么使用图片精灵？*/
+		/*主要考虑页面加载效率优化*/
+			/*1.图片大小变了*/
+			/*2.图片个数减少，减少了http请求次数*/
+		div {
+			width: 100px;
+			height: 100px;
+			border:10px solid black;
+			/*1.引用背景大图*/
+			background-image: url(图片1.png);
+		}
+		.div1 {
+			/*2.写图片定位*/
+			background-position: -234px -104px;
+		}
+		.div2 {
+			background-position: -467px -329px;
+		}
+		.div3 {
+			background-position: -44px -342px
+		}
+	</style>
+</head>
+<body>
+	<div class="div1"></div>
+	<div class="div2"></div>
+	<div class="div3"></div>
+</body>
+</html>
